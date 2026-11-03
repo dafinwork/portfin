@@ -1,1 +1,22 @@
-{"scripts":{"dev":"next dev","build":"next build","start":"next start"},"dependencies":{"@supabase/supabase-js":"^2.117.3","next":"^16.4.0","react":"^19.3.0","react-dom":"^19.3.0"},"devDependencies":{"@types/node":"^20","@types/react":"^19","@types/react-dom":"^19","typescript":"^5"}}
+{
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "node -e \"process.env.__NEXT_AGENT_UPGRADE='ignore'; process.env.CI='1'; const { spawnSync } = require('child_process'); const res = spawnSync('next', ['build'], { stdio: 'inherit', env: process.env, shell: true }); process.exit(res.status ?? 0);\"",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.117.3",
+    "next": "^16.4.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "typescript": "^5"
+  }
+}

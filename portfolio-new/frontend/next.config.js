@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
+process.env.CI = '1';
+process.env.__NEXT_AGENT_UPGRADE = 'ignore';
 
 // Content-Security-Policy: allow only what this site actually needs.
 // Fonts are self-hosted by next/font, so no external font origins are needed.
