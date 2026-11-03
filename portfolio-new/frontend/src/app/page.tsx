@@ -1,4 +1,3 @@
-import Guestbook from '../components/Guestbook';
 import TopBar from '../components/TopBar';
 
 export default function Page() {
@@ -306,9 +305,6 @@ export default function Page() {
             </div>
           </div>
         </section>
-
-        {/* GUESTBOOK */}
-        <Guestbook />
       </main>
 
       <footer>
