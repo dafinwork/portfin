@@ -138,63 +138,14 @@ if (burger && nav) {
 
 setLang(currentLang);
 
-// Works Carousel Slider
-var workCards = document.querySelectorAll('.works-slider .card.work');
-var workTabs = document.querySelectorAll('.works-pills .work-tab');
-var workCounter = document.querySelector('.work-counter');
-var prevWorkBtn = document.querySelector('.prev-work');
-var nextWorkBtn = document.querySelector('.next-work');
-var currentWorkIdx = 0;
-
-function showWork(idx) {
-  if (!workCards.length) return;
-  if (idx < 0) idx = workCards.length - 1;
-  if (idx >= workCards.length) idx = 0;
-  currentWorkIdx = idx;
-
-  workCards.forEach(function (card, i) {
-    card.classList.toggle('active', i === currentWorkIdx);
+// Reload iframe previews
+document.querySelectorAll('[data-reload]').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    var id = btn.getAttribute('data-reload');
+    var iframe = document.getElementById(id);
+    if (!iframe) return;
+    var src = iframe.src;
+    iframe.src = 'about:blank';
+    setTimeout(function () { iframe.src = src; }, 60);
   });
-  workTabs.forEach(function (tab, i) {
-    var on = i === currentWorkIdx;
-    tab.classList.toggle('on', on);
-    tab.setAttribute('aria-selected', on ? 'true' : 'false');
-  });
-  if (workCounter) {
-    workCounter.textContent = '0' + (currentWorkIdx + 1) + ' / 0' + workCards.length;
-  }
-}
-
-if (workTabs.length) {
-  workTabs.forEach(function (tab) {
-    tab.addEventListener('click', function () {
-      var idx = parseInt(tab.getAttribute('data-slide'), 10);
-      showWork(idx);
-    });
-  });
-}
-if (prevWorkBtn) {
-  prevWorkBtn.addEventListener('click', function () {
-    showWork(currentWorkIdx - 1);
-  });
-}
-if (nextWorkBtn) {
-  nextWorkBtn.addEventListener('click', function () {
-    showWork(currentWorkIdx + 1);
-  });
-}
-
-// Touch swipe support for works slider
-var sliderEl = document.getElementById('works-slider');
-if (sliderEl) {
-  var touchStartX = 0;
-  var touchEndX = 0;
-  sliderEl.addEventListener('touchstart', function (e) {
-    touchStartX = e.changedTouches[0].screenX;
-  }, { passive: true });
-  sliderEl.addEventListener('touchend', function (e) {
-    touchEndX = e.changedTouches[0].screenX;
-    if (touchStartX - touchEndX > 50) showWork(currentWorkIdx + 1);
-    if (touchEndX - touchStartX > 50) showWork(currentWorkIdx - 1);
-  }, { passive: true });
-}
+});

@@ -1,34 +1,7 @@
 'use client';
-import { useState } from 'react';
 import TopBar from '../components/TopBar';
 
 export default function Page() {
-  const [activeSlide, setActiveSlide] = useState(0);
-
-  const prevSlide = () => {
-    setActiveSlide((c) => (c === 0 ? 3 : c - 1));
-  };
-  const nextSlide = () => {
-    setActiveSlide((c) => (c === 3 ? 0 : c + 1));
-  };
-  const setSlide = (idx: number) => {
-    setActiveSlide(idx);
-  };
-
-  const [touchStartX, setTouchStartX] = useState<number | null>(null);
-  const handleTouchStart = (e: React.TouchEvent) => {
-    setTouchStartX(e.touches[0].clientX);
-  };
-  const handleTouchEnd = (e: React.TouchEvent) => {
-    if (touchStartX === null) return;
-    const diff = touchStartX - e.changedTouches[0].clientX;
-    if (Math.abs(diff) > 40) {
-      if (diff > 0) nextSlide();
-      else prevSlide();
-    }
-    setTouchStartX(null);
-  };
-
   return (
     <>
       <a className="skip" href="#works" data-i18n="skip">Skip to works</a>
@@ -75,141 +48,108 @@ export default function Page() {
     <div className="sec-head">
       <p className="sec-no" data-i18n="works.no">01 / Gallery</p>
       <h2 data-i18n="works.h2">Selected Works<span className="dot">.</span></h2>
-      <p className="sec-sub" data-i18n="works.sub">Selected production websites and frontend builds. Click any preview card or Open live to browse the projects.</p>
+      <p className="sec-sub" data-i18n="works.sub">Live sites embedded below. Browse each site <em>inside</em> this page. If a site blocks embedding, use <strong>Open live ↗</strong>.</p>
     </div>
 
-    {/* WORKS SLIDER CONTROLS */}
-    <div className="works-controls">
-      <div className="works-pills" role="tablist" aria-label="Select work">
-        <button type="button" className="work-tab on" data-slide="0">W-01 · Marketplace</button>
-        <button type="button" className="work-tab" data-slide="1">W-02 · Klik Rekrut</button>
-        <button type="button" className="work-tab" data-slide="2">W-03 · Kaos Dilio</button>
-        <button type="button" className="work-tab" data-slide="3">W-04 · IRIJ Jakarta</button>
+    {/* WORK 1 */}
+    <article className="card work">
+      <div className="work-info">
+        <p className="work-index">W-01</p>
+        <h3>Secondhand Marketplace</h3>
+        <p data-i18n="w1.desc">Front-end demo for a second-hand marketplace. Product listings, categories, detail views - static build deployed on GitHub Pages.</p>
+        <ul className="tags">
+          <li>HTML</li><li>CSS</li><li>JavaScript</li><li>GitHub Pages</li>
+        </ul>
+        <div className="work-btns">
+          <a className="btn btn-gold btn-sm" href="https://dafinwork.github.io/secondhand-marketplace/" target="_blank" rel="noopener" data-i18n="openlive">Open live <span aria-hidden="true">↗</span></a>
+          <button className="btn btn-paper btn-sm" type="button" data-reload="frame-market" data-i18n="reload">Reload preview</button>
+        </div>
       </div>
-      <div className="works-nav-btns">
-        <button type="button" className="btn btn-paper btn-sm prev-work" aria-label="Previous work">← Prev</button>
-        <span className="work-counter" aria-live="polite">01 / 04</span>
-        <button type="button" className="btn btn-gold btn-sm next-work" aria-label="Next work">Next →</button>
+      <div className="browser" role="group" aria-label="Live preview: Secondhand Marketplace">
+        <div className="browser-bar">
+          <span className="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span className="url">dafinwork.github.io/secondhand-marketplace/</span>
+          <span className="live"><i></i>LIVE</span>
+        </div>
+        <iframe id="frame-market" title="Live preview of Secondhand Marketplace website" src="https://dafinwork.github.io/secondhand-marketplace/" loading="lazy" referrerPolicy="no-referrer" sandbox="allow-scripts allow-same-origin allow-forms"></iframe>
       </div>
-    </div>
+    </article>
 
-    <div className="works-slider" id="works-slider">
-      {/* WORK 1 */}
-      <article className="card work active">
-        <div className="work-info">
-          <p className="work-index">W-01</p>
-          <h3>Secondhand Marketplace</h3>
-          <p data-i18n="w1.desc">Front-end demo for a second-hand marketplace. Product listings, categories, detail views - static build deployed on GitHub Pages.</p>
-          <ul className="tags">
-            <li>HTML</li><li>CSS</li><li>JavaScript</li><li>GitHub Pages</li>
-          </ul>
-          <div className="work-btns">
-            <a className="btn btn-gold btn-sm" href="https://dafinwork.github.io/secondhand-marketplace/" target="_blank" rel="noopener" data-i18n="openlive">Open live <span aria-hidden="true">↗</span></a>
-          </div>
+    {/* WORK 2 */}
+    <article className="card work">
+      <div className="work-info">
+        <p className="work-index">W-02</p>
+        <h3>Klik Rekrut - Recruitment Platform</h3>
+        <p data-i18n="w2.desc">Company platform I worked on as web developer: voucher-code promo system and wallet with withdrawal, wired with Google Apps Script.</p>
+        <ul className="tags">
+          <li>GAS</li><li>JavaScript</li><li>PHP</li><li>HTML</li><li>CSS</li>
+        </ul>
+        <div className="work-btns">
+          <a className="btn btn-gold btn-sm" href="https://klikrekrut.com/" target="_blank" rel="noopener" data-i18n="openlive">Open live <span aria-hidden="true">↗</span></a>
+          <button className="btn btn-paper btn-sm" type="button" data-reload="frame-klik" data-i18n="reload">Reload preview</button>
         </div>
-        <div className="browser site-shot" role="group" aria-label="Website preview: Secondhand Marketplace">
-          <div className="browser-bar">
-            <span className="dots" aria-hidden="true"><i></i><i></i><i></i></span>
-            <span className="url">dafinwork.github.io/secondhand-marketplace/</span>
-            <span className="live"><i></i>LIVE</span>
-          </div>
-          <a href="https://dafinwork.github.io/secondhand-marketplace/" target="_blank" rel="noopener" aria-label="Open Secondhand Marketplace website">
-            <img src="/preview-market.png" alt="Secondhand Marketplace preview" loading="lazy" />
-          </a>
-          <div className="site-hint">
-            <span data-i18n="site.hint">↕ Hover/touch to slide webpage preview</span>
-            <span>Open live ↗</span>
-          </div>
+      </div>
+      <div className="browser" role="group" aria-label="Live preview: Klik Rekrut">
+        <div className="browser-bar">
+          <span className="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span className="url">klikrekrut.com</span>
+          <span className="live"><i></i>LIVE</span>
         </div>
-      </article>
+        <iframe id="frame-klik" title="Live preview of Klik Rekrut website" src="https://klikrekrut.com/" loading="lazy" referrerPolicy="no-referrer" sandbox="allow-scripts allow-same-origin allow-forms"></iframe>
+        <p className="embed-note" data-i18n="embednote.klik">If this frame shows blank, the site blocks embedding: click <a href="https://klikrekrut.com/" target="_blank" rel="noopener">Open live ↗</a>.</p>
+      </div>
+    </article>
 
-      {/* WORK 2 */}
-      <article className="card work">
-        <div className="work-info">
-          <p className="work-index">W-02</p>
-          <h3>Klik Rekrut - Recruitment Platform</h3>
-          <p data-i18n="w2.desc">Company platform I worked on as web developer: voucher-code promo system and wallet with withdrawal, wired with Google Apps Script.</p>
-          <ul className="tags">
-            <li>GAS</li><li>JavaScript</li><li>PHP</li><li>HTML</li><li>CSS</li>
-          </ul>
-          <div className="work-btns">
-            <a className="btn btn-gold btn-sm" href="https://klikrekrut.com/" target="_blank" rel="noopener" data-i18n="openlive">Open live <span aria-hidden="true">↗</span></a>
-          </div>
+    {/* WORK 3 */}
+    <article className="card work">
+      <div className="work-info">
+        <p className="work-index">W-03</p>
+        <h3>Kaos Dilio - Apparel Storefront</h3>
+        <p data-i18n="w3.desc">Live catalog and custom-order site for the Kaos Dilio apparel brand, built with React + Supabase. Browse the real storefront inside this frame.</p>
+        <ul className="tags">
+          <li>React</li><li>Vite</li><li>Tailwind</li><li>Supabase</li><li>Vercel</li>
+        </ul>
+        <div className="work-btns">
+          <a className="btn btn-gold btn-sm" href="https://kaosdilio.com/" target="_blank" rel="noopener" data-i18n="openlive">Open live <span aria-hidden="true">↗</span></a>
+          <button className="btn btn-paper btn-sm" type="button" data-reload="frame-dilio" data-i18n="reload">Reload preview</button>
         </div>
-        <div className="browser site-shot" role="group" aria-label="Website preview: Klik Rekrut">
-          <div className="browser-bar">
-            <span className="dots" aria-hidden="true"><i></i><i></i><i></i></span>
-            <span className="url">klikrekrut.com</span>
-            <span className="live"><i></i>LIVE</span>
-          </div>
-          <a href="https://klikrekrut.com/" target="_blank" rel="noopener" aria-label="Open Klik Rekrut website">
-            <img src="/preview-klik.png" alt="Klik Rekrut preview" loading="lazy" />
-          </a>
-          <div className="site-hint">
-            <span data-i18n="site.hint">↕ Hover/touch to slide webpage preview</span>
-            <span>Open live ↗</span>
-          </div>
+      </div>
+      <div className="browser" role="group" aria-label="Live preview: Kaos Dilio">
+        <div className="browser-bar">
+          <span className="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span className="url">kaosdilio.com</span>
+          <span className="live"><i></i>LIVE</span>
         </div>
-      </article>
+        <iframe id="frame-dilio" title="Live preview of Kaos Dilio website" src="https://kaosdilio.com/" loading="lazy" referrerPolicy="no-referrer" sandbox="allow-scripts allow-same-origin allow-forms"></iframe>
+        <p className="embed-note" data-i18n="embednote.dilio">If this frame shows blank, the site blocks embedding: click <a href="https://kaosdilio.com/" target="_blank" rel="noopener">Open live ↗</a>.</p>
+      </div>
+    </article>
 
-      {/* WORK 3 */}
-      <article className="card work">
-        <div className="work-info">
-          <p className="work-index">W-03</p>
-          <h3>Kaos Dilio - Apparel Storefront</h3>
-          <p data-i18n="w3.desc">Live catalog and custom-order site for the Kaos Dilio apparel brand, built with React + Supabase. Browse the real storefront inside this frame.</p>
-          <ul className="tags">
-            <li>React</li><li>Vite</li><li>Tailwind</li><li>Supabase</li><li>Vercel</li>
-          </ul>
-          <div className="work-btns">
-            <a className="btn btn-gold btn-sm" href="https://kaosdilio.com/" target="_blank" rel="noopener" data-i18n="openlive">Open live <span aria-hidden="true">↗</span></a>
-          </div>
+    {/* WORK 4 */}
+    <article className="card work">
+      <div className="work-info">
+        <p className="work-index">W-04</p>
+        <h3>IRIJ Jakarta - Research Institute</h3>
+        <p data-i18n="w4.desc">Company profile and research publication site for Indonesia Research Institute Japan. Built and customized in WordPress with custom PHP, HTML, CSS, and JavaScript.</p>
+        <ul className="tags">
+          <li>WordPress</li><li>PHP</li><li>HTML</li><li>CSS</li><li>JavaScript</li>
+        </ul>
+        <div className="work-btns">
+          <a className="btn btn-gold btn-sm" href="https://irij-jakarta.com/" target="_blank" rel="noopener" data-i18n="openlive">Open live <span aria-hidden="true">↗</span></a>
         </div>
-        <div className="browser site-shot" role="group" aria-label="Website preview: Kaos Dilio">
-          <div className="browser-bar">
-            <span className="dots" aria-hidden="true"><i></i><i></i><i></i></span>
-            <span className="url">kaosdilio.com</span>
-            <span className="live"><i></i>LIVE</span>
-          </div>
-          <a href="https://kaosdilio.com/" target="_blank" rel="noopener" aria-label="Open Kaos Dilio website">
-            <img src="/preview-dilio.png" alt="Kaos Dilio preview" loading="lazy" />
-          </a>
-          <div className="site-hint">
-            <span data-i18n="site.hint">↕ Hover/touch to slide webpage preview</span>
-            <span>Open live ↗</span>
-          </div>
+      </div>
+      <div className="browser site-shot" role="group" aria-label="Website preview: IRIJ Jakarta">
+        <div className="browser-bar">
+          <span className="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span className="url">irij-jakarta.com</span>
+          <span className="live"><i></i>LIVE</span>
         </div>
-      </article>
-
-      {/* WORK 4 */}
-      <article className="card work">
-        <div className="work-info">
-          <p className="work-index">W-04</p>
-          <h3>IRIJ Jakarta - Research Institute</h3>
-          <p data-i18n="w4.desc">Company profile and research publication site for Indonesia Research Institute Japan. Built and customized in WordPress with custom PHP, HTML, CSS, and JavaScript.</p>
-          <ul className="tags">
-            <li>WordPress</li><li>PHP</li><li>HTML</li><li>CSS</li><li>JavaScript</li>
-          </ul>
-          <div className="work-btns">
-            <a className="btn btn-gold btn-sm" href="https://irij-jakarta.com/" target="_blank" rel="noopener" data-i18n="openlive">Open live <span aria-hidden="true">↗</span></a>
-          </div>
+        <div className="browser-screen" tabIndex={0} role="region" aria-label="Scrollable preview of IRIJ Jakarta">
+          <img src="/preview-irij.png" alt="IRIJ Jakarta website hero preview" loading="lazy" />
         </div>
-        <div className="browser site-shot" role="group" aria-label="Website preview: IRIJ Jakarta">
-          <div className="browser-bar">
-            <span className="dots" aria-hidden="true"><i></i><i></i><i></i></span>
-            <span className="url">irij-jakarta.com</span>
-            <span className="live"><i></i>LIVE</span>
-          </div>
-          <a href="https://irij-jakarta.com/" target="_blank" rel="noopener" aria-label="Open IRIJ Jakarta website">
-            <img src="/preview-irij.png" alt="IRIJ Jakarta website hero preview" loading="lazy" />
-          </a>
-          <div className="site-hint">
-            <span data-i18n="site.hint">↕ Hover/touch to slide webpage preview</span>
-            <span>Open live ↗</span>
-          </div>
-        </div>
-      </article>
-    </div>
+        <p className="embed-note" data-i18n="embednote.irij">Preview image shown because the live site may block iframe embedding.</p>
+      </div>
+    </article>
   </section>
 
   {/* SYSTEMS : off-screen work, no iframe possible */}
