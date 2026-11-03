@@ -7,28 +7,27 @@ var I18N_ID = {
   'nav.about': 'Tentang',
   'nav.contact': 'Kontak',
   'nav.cta': 'Hubungi saya <span aria-hidden="true">↗</span>',
-  'hero.kicker': '<span class="tag">●</span> Terbuka untuk kerja',
   'hero.h1': 'Halo<br>semua<span class="dot">!</span>',
-  'hero.lede': 'Saya <strong>Muhamad Dafin Al Dzaky</strong>, full-stack web developer. Laravel / PHP / JavaScript untuk web, kustomisasi WordPress, otomasi Google Apps Script, dan bot otomasi AI + WhatsApp. Saya juga mengerjakan hardware PC dan laptop: assembly, troubleshooting, instal OS.',
-  'hero.see': 'Lihat karya <span aria-hidden="true">↗</span>',
+  'hero.lede': 'Saya <strong>Muhamad Dafin Al Dzaky</strong>, full-stack web developer dan software engineer berbasis di Bekasi, Indonesia. Berfokus pada pembangunan aplikasi web tangguh dengan Laravel, PHP, dan JavaScript modern untuk membangun sistem manajemen terintegrasi, otomasi API, serta platform berbasis data. Saya juga menangani perakitan hardware PC/laptop, troubleshooting, dan instalasi sistem.',
+  'hero.see': 'Lihat karya <span aria-hidden="true">↓</span>',
   'hero.email': 'Email saya',
   'stat.sites': 'situs produksi rilis',
   'stat.roles': 'peran dev, freelance remote',
   'stat.certs': 'sertifikasi · IBM &amp; Cisco',
   'side.curLabel': 'Saat ini',
-  'side.curDesc': 'Sistem lead-gen LinkedIn (Google X-Ray), filter intent Gemini + Groq, bot dispatch WhatsApp Baileys dengan cron.',
+  'side.curTitle': 'Full-Stack Web Developer @ Z3 Techno Solution',
+  'side.curDesc': 'Platform tiket engineering gedung, POS &amp; inventaris multi-cabang, dan PMS hotel dengan OCR (Laravel, SQLite, MySQL, Python).',
   'side.prevLabel': 'Sebelumnya',
-  'side.prevTitle': 'Company profile WordPress dan pengembangan web di sisi platform.',
-  'side.prevBtn': 'Riwayat kerja <span aria-hidden="true">↗</span>',
+  'side.prevTitle': 'AI &amp; Automation Developer @ KLIK Rekrut',
+  'side.prevDesc': 'Sistem lead-gen LinkedIn (Google X-Ray), filter intent Gemini + Groq, dan bot dispatch WhatsApp Baileys.',
+  'side.prevBtn': 'Riwayat kerja <span aria-hidden="true">↓</span>',
   'side.mini': 'Full-stack + hardware. Siap remote.',
-  'stack.no': 'Tools yang saya pakai',
-  'stack.h2': 'Stack mengikuti pekerjaannya<span class="dot">.</span>',
-  'stack.sub': 'Saya memilih tool sesuai kebutuhan. Portfolio ini memakai HTML, CSS, dan JavaScript biasa; project di bawah menunjukkan penggunaan Laravel, WordPress, React, dan Node.js.',
   'works.no': '01 / Galeri',
   'works.h2': 'Karya Pilihan<span class="dot">.</span>',
-  'works.sub': 'Situs live yang disematkan di bawah. Jelajahi tiap situs <em>langsung</em> di halaman ini. Jika situs memblokir embed, gunakan <strong>Buka situs ↗</strong>.',
+  'works.sub': 'Pilihan website produksi dan build front-end. Klik kartu atau Buka situs untuk menjelajahi proyek.',
   'w1.desc': 'Demo front-end untuk marketplace barang bekas. Daftar produk, kategori, halaman detail. Static build yang di-deploy di GitHub Pages.',
   'openlive': 'Buka situs <span aria-hidden="true">↗</span>',
+  'site.hint': '↕ Arahkan kursor / sentuh untuk slide halaman preview',
   'reload': 'Muat ulang',
   'w2.desc': 'Platform perusahaan yang saya kerjakan sebagai web developer: sistem promo kode voucher dan wallet dengan penarikan, dirangkaikan dengan Google Apps Script.',
   'w3.desc': 'Situs katalog dan custom-order live untuk brand apparel Kaos Dilio, dibangun dengan React + Supabase. Jelajahi storefront aslinya di dalam frame ini.',
@@ -46,6 +45,12 @@ var I18N_ID = {
   's1.note': 'Headless by design. Worker latar 24/7. Walkthrough arsitektur dan source code tersedia jika diminta.',
   'exp.no': '03 / Riwayat Kerja',
   'exp.h2': 'Pengalaman<span class="dot">.</span>',
+  'jz3.role': 'Full-Stack Web Developer / Software Engineer',
+  'jz3.date': '2025 – Sekarang',
+  'jz3.li1': '<strong>Building Engineering &amp; Inspection Ticketing System:</strong> Mengembangkan platform operasional dan tiket engineering gedung (Laravel 11, SQLite) dengan denah interaktif 2D berbasis koordinat persentase (x%, y%), pelacakan siklus aset, dan keamanan RBAC 6 tingkatan.',
+  'jz3.li2': '<strong>Multi-Outlet Inventory &amp; POS Platform:</strong> Merancang sistem inventaris dan kasir multi-cabang (Laravel 12, MySQL) dengan konversi multi-satuan (Dus -&gt; Pak -&gt; Pcs), audit kartu stok real-time, pencarian barcode global, dan UI kasir responsif untuk tablet.',
+  'jz3.li3': '<strong>Hotel Property Management System (PMS):</strong> Membangun sistem operasional hotel (PMS) terintegrasi Python Tesseract OCR untuk scan KTP otomatis, penanganan data tamu berulang, alur reservasi OTA, dan 41 automated test PHPUnit.',
+  'jz3.li4': '<strong>Corporate Web &amp; Automation Tooling:</strong> Mengembangkan web profil dan katalog perusahaan serta skrip otomasi Python untuk deployment FTP otomatis, backup database, dan verifikasi data.',
   'j1.li1': 'Otomasi lead generation LinkedIn dengan query Google X-Ray untuk HR / Talent Acquisition / Founders.',
   'j1.li2': 'Filtering engine dengan LLM Google Gemini + Groq: analisis intent semantik, membuang company pages.',
   'j1.li3': 'Bot dispatch WhatsApp (Baileys) dengan cron scheduling dan perintah query ke grup sales.',
@@ -59,11 +64,11 @@ var I18N_ID = {
   'j4.li1': 'Template Blade modular, layout responsif mobile-friendly, animasi JS.',
   'j4.li2': 'Kolaborasi remote berbasis Git.',
   'barista.p': 'Menyiapkan dan menyajikan pesanan kopi dan minuman di kafe yang sibuk; menjaga standar layanan.',
-  'exp.cta': 'Mari kerja sama <span aria-hidden="true">↗</span>',
+  'exp.cta': 'Mari kerja sama <span aria-hidden="true">↓</span>',
   'about.no': '04 / Profil',
   'about.h2': 'Tentang<span class="dot">.</span>',
   'about.bio': 'Lulusan S1 Informatika (konsentrasi Software Engineering), Universitas Bhayangkara Jakarta Raya, 2022-2026. Latar SMK RPL (SMKN 5 Bekasi, 2019-2022). Saya membangun website full-stack end to end, dan juga menangani hardware: assembly, config, troubleshooting, instal.',
-  'about.code': 'Kode',
+  'about.tech': 'Tech Stack',
   'about.hw': 'Hardware &amp; dukungan',
   'about.certs': 'Sertifikat',
   'contact.no': '05 / Kontak',
@@ -131,17 +136,65 @@ if (burger && nav) {
   });
 }
 
-// Reload buttons for the embedded live previews (website-in-website).
-document.querySelectorAll('[data-reload]').forEach(function (btn) {
-  btn.addEventListener('click', function () {
-    var frame = document.getElementById(btn.getAttribute('data-reload'));
-    if (!frame) return;
-    frame.setAttribute('src', frame.getAttribute('src'));
-    var key = btn.getAttribute('data-i18n');
-    var label = (currentLang === 'id' && I18N_ID[key]) ? I18N_ID[key] : (btn._en || btn.innerHTML);
-    btn.textContent = '...';
-    setTimeout(function () { btn.innerHTML = label; }, 1200);
-  });
-});
-
 setLang(currentLang);
+
+// Works Carousel Slider
+var workCards = document.querySelectorAll('.works-slider .card.work');
+var workTabs = document.querySelectorAll('.works-pills .work-tab');
+var workCounter = document.querySelector('.work-counter');
+var prevWorkBtn = document.querySelector('.prev-work');
+var nextWorkBtn = document.querySelector('.next-work');
+var currentWorkIdx = 0;
+
+function showWork(idx) {
+  if (!workCards.length) return;
+  if (idx < 0) idx = workCards.length - 1;
+  if (idx >= workCards.length) idx = 0;
+  currentWorkIdx = idx;
+
+  workCards.forEach(function (card, i) {
+    card.classList.toggle('active', i === currentWorkIdx);
+  });
+  workTabs.forEach(function (tab, i) {
+    var on = i === currentWorkIdx;
+    tab.classList.toggle('on', on);
+    tab.setAttribute('aria-selected', on ? 'true' : 'false');
+  });
+  if (workCounter) {
+    workCounter.textContent = '0' + (currentWorkIdx + 1) + ' / 0' + workCards.length;
+  }
+}
+
+if (workTabs.length) {
+  workTabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      var idx = parseInt(tab.getAttribute('data-slide'), 10);
+      showWork(idx);
+    });
+  });
+}
+if (prevWorkBtn) {
+  prevWorkBtn.addEventListener('click', function () {
+    showWork(currentWorkIdx - 1);
+  });
+}
+if (nextWorkBtn) {
+  nextWorkBtn.addEventListener('click', function () {
+    showWork(currentWorkIdx + 1);
+  });
+}
+
+// Touch swipe support for works slider
+var sliderEl = document.getElementById('works-slider');
+if (sliderEl) {
+  var touchStartX = 0;
+  var touchEndX = 0;
+  sliderEl.addEventListener('touchstart', function (e) {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+  sliderEl.addEventListener('touchend', function (e) {
+    touchEndX = e.changedTouches[0].screenX;
+    if (touchStartX - touchEndX > 50) showWork(currentWorkIdx + 1);
+    if (touchEndX - touchStartX > 50) showWork(currentWorkIdx - 1);
+  }, { passive: true });
+}
